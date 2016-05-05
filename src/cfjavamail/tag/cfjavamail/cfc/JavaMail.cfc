@@ -611,6 +611,7 @@
         <cfset var msgBCC = "">
         <cfset var msgReplyTo = "">
         <cfset var msgFlags = "">
+				<cfset var msgFlag = "">
         <cfset var msgBody = "">
         <cfset var msgTxtBody = "">
         <cfset var msgAttachments = "">
@@ -714,19 +715,20 @@
         <cfset querySetCell(qry_Messages,"user", false)>
         <cfset querySetCell(qry_Messages,"recent", false)>
         <cfloop from="1" to="#arrayLen(msgFlags)#" step="1" index="i">
-            <cfif msgFlags[i] eq variables.objFlag.SEEN>
+						<cfset msgFlag = toString(msgFlags[i])>
+            <cfif msgFlag eq toString(variables.objFlag.SEEN)>
                 <cfset querySetCell(qry_Messages,"seen", true)>
-            <cfelseif msgFlags[i] eq variables.objFlag.ANSWERED>
+            <cfelseif msgFlag eq toString(variables.objFlag.ANSWERED)>
                 <cfset querySetCell(qry_Messages,"answered", true)>
-            <cfelseif msgFlags[i] eq variables.objFlag.DELETED>
+            <cfelseif msgFlag eq toString(variables.objFlag.DELETED)>
                 <cfset querySetCell(qry_Messages,"deleted", true)>
-            <cfelseif msgFlags[i] eq variables.objFlag.DRAFT>
+            <cfelseif msgFlag eq toString(variables.objFlag.DRAFT)>
                 <cfset querySetCell(qry_Messages,"draft", true)>
-            <cfelseif msgFlags[i] eq variables.objFlag.FLAGGED>
+            <cfelseif msgFlag eq toString(variables.objFlag.FLAGGED)>
                 <cfset querySetCell(qry_Messages,"flagged", true)>
-            <cfelseif msgFlags[i] eq variables.objFlag.USER>
+            <cfelseif msgFlag eq toString(variables.objFlag.USER)>
                 <cfset querySetCell(qry_Messages,"user", true)>
-            <cfelseif msgFlags[i] eq variables.objFlag.RECENT>
+            <cfelseif msgFlag eq toString(variables.objFlag.RECENT)>
                 <cfset querySetCell(qry_Messages,"recent", true)>
             </cfif>
         </cfloop>
