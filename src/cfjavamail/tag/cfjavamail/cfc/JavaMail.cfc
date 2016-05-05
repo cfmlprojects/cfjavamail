@@ -777,7 +777,7 @@
         <cfargument name="value" required="Yes" type="boolean">
 
         <cfset var objStore = getConnectedMailStore()>
-        <cfset var objFolder = OpenFolder(objStore, arguments.folder, false)>
+        <cfset var objFolder = OpenFolder(objStore, arguments.folder, true)>
 
         <cfset setFlag(objFolder, arguments.messageNumber, "ANSWERED", arguments.value)>
         <cfset objFolder.close(false)>
@@ -791,7 +791,7 @@
         <cfargument name="value" required="Yes" type="boolean">
 
         <cfset var objStore = getConnectedMailStore()>
-        <cfset var objFolder = OpenFolder(objStore, arguments.folder, false)>
+        <cfset var objFolder = OpenFolder(objStore, arguments.folder, true)>
 
         <cfset setFlag(objFolder, arguments.messageNumber, "SEEN", arguments.value)>
         <cfset objFolder.close(false)>
@@ -805,7 +805,7 @@
         <cfargument name="value" required="Yes" type="boolean">
 
         <cfset var objStore = getConnectedMailStore()>
-        <cfset var objFolder = OpenFolder(objStore, arguments.folder, false)>
+        <cfset var objFolder = OpenFolder(objStore, arguments.folder, true)>
 
         <cfset setFlag(objFolder, arguments.messageNumber, "DRAFT", arguments.value)>
         <cfset objFolder.close(false)>
@@ -819,7 +819,7 @@
         <cfargument name="value" required="Yes" type="boolean">
 
         <cfset var objStore = getConnectedMailStore()>
-        <cfset var objFolder = OpenFolder(objStore, arguments.folder, false)>
+        <cfset var objFolder = OpenFolder(objStore, arguments.folder, true)>
 
         <cfset setFlag(objFolder, arguments.messageNumber, "FLAGGED", arguments.value)>
         <cfset objFolder.close(false)>
@@ -833,7 +833,7 @@
         <cfargument name="value" required="Yes" type="boolean">
 
         <cfset var objStore = getConnectedMailStore()>
-        <cfset var objFolder = OpenFolder(objStore, arguments.folder, false)>
+        <cfset var objFolder = OpenFolder(objStore, arguments.folder, true)>
 
         <cfset setFlag(objFolder, arguments.messageNumber, "RECENT", arguments.value)>
         <cfset objFolder.close(false)>
@@ -847,7 +847,7 @@
         <cfargument name="value" required="Yes" type="boolean">
 
         <cfset var objStore = getConnectedMailStore()>
-        <cfset var objFolder = OpenFolder(objStore, arguments.folder, false)>
+        <cfset var objFolder = OpenFolder(objStore, arguments.folder, true)>
 
         <cfset setFlag(objFolder, arguments.messageNumber, "USER", arguments.value)>
         <cfset objFolder.close(false)>
